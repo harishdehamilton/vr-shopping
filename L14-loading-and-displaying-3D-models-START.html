@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>L14 - Loading and displaying 3D models</title>
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <!-- Asset Management System -->
+            <!-- Download and move your 3D models to the ASSETs folder -->
+            <a-assets>
+                <img id="sky" src="L14-ASSETs/clear-sunny-sky.jpg">
+                 <a-asset-item id="CASTEL" src="L14-ASSETs/scene.gltf"></a-asset-item>
+                 <a-asset-item id="cap" src="L14-ASSETs/Catapult.obj"></a-asset-item>
+                <a-asset-item id="cap-m" src="L14-ASSETs/Catapult.mtl"></a-asset-item>
+            </a-assets>
+            <a-entity position="-3.5 0 53">
+            <a-camera></a-camera></a-entity>
+            
+            <!-- Sky -->
+            <a-sky src="#sky"></a-sky>
+            <a-entity gltf-model=#CASTEL></a-entity>
+             <a-entity obj-model="obj:#cap; mtl:#cap-m"
+                      position="-10 0 50"
+                      rotation="0 200 0"
+                       scale="0.5 0.5 0.5"></a-entity>
+        </a-scene>
+    </body>
+</html>
